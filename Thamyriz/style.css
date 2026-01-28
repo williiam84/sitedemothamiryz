@@ -10,6 +10,10 @@ html, body {
   width: 100%;
   overflow-x: hidden;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 nav a {
   color: #000;
@@ -1486,4 +1490,12 @@ body {
     bottom: 20px;
     right: 20px;
   }
+}
+
+.hero {
+  min-height: calc(100vh - 80px); /* desconta o header */
+  display: flex;
+  align-items: center;
+  background-color: #faf6ee;
+  padding: 0 20px;
 }
