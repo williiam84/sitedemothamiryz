@@ -18,6 +18,7 @@ body {
   background: #fff;
   color: #000;
 }
+
 /* ================= HEADER PREMIUM ================= */
 .header {
   color: black;
@@ -34,6 +35,12 @@ body {
 
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px; /* altura fixa */
 }
 
 /* LOGO */
@@ -1321,16 +1328,17 @@ body {
     display: block;
   }
 }
-/* ================= MOBILE FIRST ================= */
+/* ================= MOBILE FINAL ================= */
 @media (max-width: 900px) {
 
+  /* ===== HEADER ===== */
   body {
-    overflow-x: hidden;
+    padding-top: 70px;
   }
 
-  /* ===== HEADER ===== */
   .header {
-    padding: 14px 20px;
+    height: 70px;
+    padding: 12px 20px;
   }
 
   .logo img {
@@ -1345,40 +1353,42 @@ body {
     display: block;
     font-size: 28px;
     color: #111;
-    cursor: pointer;
   }
 
   /* ===== MENU MOBILE ===== */
   .nav-mobile {
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
     background: #ffffff;
+    padding: 80px 24px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    transform: translateX(100%);
-    transition: 0.4s ease;
-    z-index: 2000;
+    gap: 24px;
+    transition: 0.3s ease;
+    z-index: 3000;
   }
 
   .nav-mobile.active {
-    transform: translateX(0);
+    right: 0;
   }
 
   .nav-mobile a {
-    font-size: 1.4rem;
+    font-size: 18px;
     color: #111;
     text-decoration: none;
-    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
   }
 
   .close-menu {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 28px;
+    top: 18px;
+    right: 18px;
+    font-size: 26px;
     background: none;
     border: none;
     cursor: pointer;
@@ -1387,7 +1397,8 @@ body {
 
   /* ===== HERO ===== */
   .hero {
-    padding: 90px 20px 70px;
+    min-height: calc(100vh - 70px);
+    padding: 40px 20px;
   }
 
   .hero-container {
@@ -1397,12 +1408,12 @@ body {
   }
 
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
 
   .hero-content p {
     font-size: 1rem;
-    margin: 0 auto 25px;
+    margin: 0 auto 28px;
   }
 
   .hero-img img {
@@ -1412,33 +1423,20 @@ body {
 
   /* ===== PORTFÓLIO ===== */
   .portifolio {
-    padding: 80px 20px;
-  }
-
-  .portifolio-header h2 {
-    font-size: 1.8rem;
+    padding: 70px 20px;
   }
 
   .slider {
     max-width: 320px;
   }
 
-  .slide img {
-    height: 320px;
-    border-radius: 18px;
-  }
-
   /* ===== SERVIÇOS ===== */
   .servicos {
-    padding: 80px 20px;
+    padding: 70px 20px;
   }
 
   .servicos-header h2 {
-    font-size: 1.9rem;
-  }
-
-  .lista-servicos {
-    gap: 30px;
+    font-size: 2rem;
   }
 
   .servico .topo {
@@ -1455,10 +1453,9 @@ body {
   .sobre-container {
     flex-direction: column;
     text-align: center;
-    gap: 35px;
   }
 
-  .sobre-container img {
+  .sobre-container .imagem img {
     width: 240px;
   }
 
@@ -1483,12 +1480,10 @@ body {
 
   /* ===== WHATSAPP FIXO ===== */
   .whatsapp-fixo {
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
     font-size: 1.6rem;
     bottom: 20px;
     right: 20px;
   }
 }
-
-
