@@ -1303,5 +1303,49 @@ body {
 .footer-contato {
   padding-top: 10px;
 }
+@media (max-width: 768px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    text-align: left;
+  }
+
+  /* Marca ocupa tudo em cima */
+  .footer-brand {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .footer-nav,
+  .footer-contato {
+    text-align: left;
+  }
+
+  .footer-nav h4,
+  .footer-contato h4 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .footer-nav a,
+  .footer-contato a {
+    font-size: 14px;
+    padding: 4px 0;
+  }
+
+  .footer-copy {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 25px;
+  }
+}
+
+
 
 
